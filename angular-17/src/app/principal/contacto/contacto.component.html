@@ -1,0 +1,28 @@
+<h1>formulario de contacto</h1>
+<form [formGroup]="registroform" (submit)="send()" class="container mb-5">
+    <section class="form-group">
+        <label for="" class="h4">nombre</label>
+        <input formControlName="nombres" [value]="" class="form-control" type="text" >
+    </section>
+    <section>
+        <label for=""  class="h4">correo</label>
+        <input formControlName="correo" [value]="" class="form-control" type="text" >
+    </section>
+    <section class="form-group">
+        <label for="" class="h4">telefono</label>
+        <input formControlName="telefono" [value]="" class="form-control" type="text" >
+    </section>
+    <section class="form-group">
+        <label for="" class="h4">pais</label>
+        <select formControlName="pais" name="select" class="form-select" >
+            <option [value]="item" *ngFor="let item of pais">{{item}} </option>
+        </select>
+    </section>
+    <section class="form-group">
+        <label for="" class="h4">existencia</label>
+        <textarea formControlName="existencia" [value]="" class="form-control" name="asd" id="asd" cols="30" rows="3" ></textarea>
+    </section>
+    <section class="form-group">
+        <button type="submit">enviar</button>
+    </section>
+</form>

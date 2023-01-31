@@ -1,0 +1,35 @@
+<table class="table table-striped table-bordered container">
+    <thead  class="thead-dark">
+        <tr class="table-dark">
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">correo</th>
+            <th scope="col">telefono</th>
+            <th scope="col">pais</th>
+            <th scope="col">existencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let item of usuario;let index=index">
+            
+            <th scope="row">{{index}} </th>
+            <th>{{item.nombres}}</th>
+            <th>{{item.correo}}</th>
+            <th>{{item.telefono}}</th>
+            <th>{{item.pais}}</th>
+            <th>{{item.existencia }}</th>  
+        </tr>
+    </tbody>
+</table>
+<form [formGroup]="registroform" (submit)="send()" class="container">
+    <section class="form-group">
+        <label for="" class="h2">filtrar</label>
+        <select formControlName="pais"  class="form-select" name="" id="">
+            <option  value={{item}} *ngFor="let item of pais">{{item}} </option>
+        </select>
+    </section>
+    <section class="form-group">
+        <button type="submit">ir</button>
+    </section>
+</form>
